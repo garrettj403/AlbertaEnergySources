@@ -1,5 +1,5 @@
-from lxml import html
-import requests
+#!/usr/local/bin/python
+import datetime
 import pandas as pd 
 
 ab_power_address = 'http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet'
@@ -12,4 +12,11 @@ data.set_index('Source', inplace=True, drop=True)
 tng = data['TNG']  # TNG - Total Net Generation
 mc = data['MC']    # MC  - Maximum Capacity
 
-print data
+now = datetime.datetime.now()
+
+with open('data.csv', 'a') as f:
+    string = []
+    string += [str(now)]
+    string += tng.tolist()
+    string = ', '.join(string) + ' \n'
+    f.write(string)
