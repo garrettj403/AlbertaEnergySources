@@ -9,5 +9,5 @@ To scrape every 5 minutes:
 crontab -e
 ```
 ```bash
-*/5 * * * * PATH=$PATH:/usr/sbin /Volumes/Data/garrett/applications/anaconda2/bin/python /Volumes/Data/garrett/GoogleDrive/Projects/AlbertaEnergy/get_data.py
+*/5 * * * * PATH=$PATH:/usr/sbin <path-to-python> <path-to-script>/get_data.py
 ```
